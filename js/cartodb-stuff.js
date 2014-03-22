@@ -25,6 +25,15 @@ function main() {
   }).on('error', function() {
     cartodb.log.log("some error occurred");
   });
+
+
+  // Sidebar controls
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("active");
+  });
+  
+  $('.slider').slider();
 }
 
 // you could use $(window).load(main);
