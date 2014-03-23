@@ -32,7 +32,19 @@ $(document).ready(function() {
     }
   };
 
-  $('.slider').slider(sliderOptions);
+  $('.slider.common-slider').slider(sliderOptions);
+
+  var costOptions = {
+    min: 10,
+    max: 100,
+    step: 1,
+    value: 25,
+    formater: function(val) {
+      return '$' + val.toFixed(2);
+    }
+  };
+
+  $('.slider.cost-slider').slider(costOptions);
   
 
   var url = 'http://sebrenner.cartodb.com/api/v2/viz/0ea1f37e-b21e-11e3-bf2d-0edbca4b5057/viz.json';
@@ -87,15 +99,6 @@ $(document).ready(function() {
           break;
       }
     });
-  });
-
-  $('#avatarModal .btn').click(function() {
-    var id = this.id;
-    var text = $(this).attr('data-text');
-
-    text = text ? 'You may be interested in: ' + text : '';
-
-    $('#avatarDescription').text(text);
   });
 
 });
