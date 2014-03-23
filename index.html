@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Leaflet example | CartoDB.js</title>
+    <title>HotSpots: Colorado Business Location Intelligence</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
@@ -104,7 +104,6 @@
 
     <div id="wrapper">
       <div id="sidebar-wrapper">
-      <!--
         <ul class="sidebar-nav">
           <li>
             <p>
@@ -114,6 +113,7 @@
               </button>
             </p>
           </li>
+          <!--
           <li>
             <p>Liquor Licenses</p>
             <div id="slider1" class="slider"></div>
@@ -126,8 +126,8 @@
             <p>Mobile Phone Signal Strength</p>
             <div id="slider3" class="slider"></div>
           </li>
-        </ul>
         -->
+        </ul>
 
         <div class="panel-group" id="accordion">
           <div class="panel">
@@ -141,7 +141,7 @@
             </a>
             <div id="collapse2" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div id="slider1"class="slider"></div>
+                Importance: <div id="slider1" class="slider common-slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -157,9 +157,9 @@
             </a>
             <div id="collapse3" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div id="slider2"class="slider"></div>
+                Importance: <div id="slider2"class="slider common-slider"></div>
                 <div >
-            Min Speed: <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10"  />
+            Min Speed: <input type="text" class="slider common-slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10"  />
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@
             </a>
             <div id="collapse4" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div id="slider3" class="slider"></div>
+                Importance: <div id="slider3" class="slider common-slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -208,10 +208,10 @@
             <div id="collapse6" class="panel-collapse collapse">
               <div class="panel-body">
                 <p>
-                    Income: <b>$0</b> <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000000" data-slider-step="10" data-slider-value="[0, 100000]" /> <b>$1 mil</b>
+                    Income: <b>$0</b> <input type="text" class="slider common-slider" value="" data-slider-min="0" data-slider-max="1000000" data-slider-step="10" data-slider-value="[0, 100000]" /> <b>$1 mil</b>
                 </p>
                 <p>
-                Age: <b>0</b> <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="20" data-slider-value="[18, 35]" /> <b>100</b>
+                Age: <b>0</b> <input type="text" class="slider common-slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="20" data-slider-value="[18, 35]" /> <b>100</b>
                 </p>
               </div>
             </div>
@@ -227,7 +227,7 @@
             </a>
             <div id="collapse7" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div class="slider"></div>
+                Importance: <div class="slider common-slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -243,8 +243,9 @@
             <div id="collapse8" class="panel-collapse collapse">
               <div class="panel-body">
                <p>
-                Max <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100000" data-slider-step="20" id="" />
+                Max <input type="text" class="slider common-slider" value="" data-slider-min="0" data-slider-max="100000" data-slider-step="20" id="" />
                 </p>
+
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -270,6 +271,8 @@
               </div>
             </div>
           </div><!-- accordion panel -->
+
+       
 
 
 
@@ -324,6 +327,7 @@
     <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
     <script src="js/cartodb-stuff.js"></script>
+    <script src="js/avatar.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
