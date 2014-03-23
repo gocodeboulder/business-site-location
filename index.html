@@ -28,6 +28,56 @@
   </head>
   <body>
     
+    <div class="modal fade" id="business_types_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Business Types</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+                <div class="col-md-3">
+                <div class="checkbox"><label>Restaurants<input type="checkbox" /></label></div>
+                </div>
+                <div class="col-md-3">
+                <div class="checkbox"><label>Nightlife<input type="checkbox" /></label></div>
+                </div>
+                <div class="col-md-4">
+                <div class="checkbox"><label>Food<input type="checkbox" /></label></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                <div class="checkbox"><label>Shopping<input type="checkbox" /></label></div>
+                </div>
+                <div class="col-md-3">
+                <div class="checkbox"><label>Bars<input type="checkbox" /></label></div>
+                </div>
+                <div class="col-md-4">
+                <div class="checkbox"><label>Beauty & Spas<input type="checkbox" /></label></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                <div class="checkbox"><label>Automotive<input type="checkbox" /></label></div>
+                </div>
+                <div class="col-md-3">
+                <div class="checkbox"><label>Health & Medical<input type="checkbox" /></label></div>
+                </div>
+                <div class="col-md-4">
+                <div class="checkbox"><label>Home Services<input type="checkbox" /></label></div>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    
     <a href="#content" class="sr-only">Skip to main content</a>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -80,35 +130,18 @@
         </ul>
 
         <div class="panel-group" id="accordion">
-
-          <div class="panel panel-default">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                    Demographics
-                  <i class="icon-info-sign"></i>
-                </h4> 
-              </div>
-            </a>
-            <div id="collapse1" class="panel-collapse collapse">
-              <div class="panel-body">
-                Lorem Ipsum
-              </div>
-            </div>
-          </div><!-- accordion panel -->
-
           <div class="panel">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                    Booze
+                    Liquor Licenses
                   <i class="icon-info-sign"></i>
                 </h4> 
               </div>
             </a>
             <div id="collapse2" class="panel-collapse collapse">
               <div class="panel-body">
-                <div id="slider1" class="slider common-slider"></div>
+                Importance: <div id="slider1"class="slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -124,7 +157,10 @@
             </a>
             <div id="collapse3" class="panel-collapse collapse">
               <div class="panel-body">
-                <div id="slider2" class="slider common-slider"></div>
+                Importance: <div id="slider2"class="slider"></div>
+                <div >
+            Min Speed: <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10"  />
+                </div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -140,29 +176,112 @@
             </a>
             <div id="collapse4" class="panel-collapse collapse">
               <div class="panel-body">
-                <div id="slider3" class="slider common-slider"></div>
+                Importance: <div id="slider3" class="slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
-
-          <div class="panel">
+            <div class="panel">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                    Real Estate Cost
-                  <i class="icon-info-sign"></i>
+                    Leisure<i class="icon-info-sign"></i>
                 </h4> 
               </div>
             </a>
             <div id="collapse5" class="panel-collapse collapse">
               <div class="panel-body">
-                <div id="slider4" class="slider cost-slider"></div>
+                <div>
+                    <div class="checkbox"><label>restaurant-bar<input type="checkbox" /></label></div>
+                    <div class="checkbox"><label>parks<input type="checkbox" /></label></div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="panel">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                    Demographics<i class="icon-info-sign"></i>
+                </h4> 
+              </div>
+            </a>
+            <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>
+                    Income: <b>$0</b> <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000000" data-slider-step="10" data-slider-value="[0, 100000]" /> <b>$1 mil</b>
+                </p>
+                <p>
+                Age: <b>0</b> <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="20" data-slider-value="[18, 35]" /> <b>100</b>
+                </p>
+              </div>
+            </div>
+            </div>
+            <div class="panel">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                    Walkability
+                  <i class="icon-info-sign"></i>
+                </h4> 
+              </div>
+            </a>
+            <div id="collapse7" class="panel-collapse collapse">
+              <div class="panel-body">
+                Importance: <div class="slider"></div>
+              </div>
+            </div>
+          </div><!-- accordion panel -->
+            <div class="panel">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                    Property Values
+                  <i class="icon-info-sign"></i>
+                </h4> 
+              </div>
+            </a>
+            <div id="collapse8" class="panel-collapse collapse">
+              <div class="panel-body">
+               <p>
+                Max <input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100000" data-slider-step="20" id="" />
+                </p>
+              </div>
+            </div>
+          </div><!-- accordion panel -->
+          <div class="panel">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                    Additional Information
+                  <i class="icon-info-sign"></i>
+                </h4> 
+              </div>
+            </a>
+            <div id="collapse9" class="panel-collapse collapse">
+              <div class="panel-body">
+               <p>
+                <div class="checkbox">
+                    <label>Economic Develpment Zones<input type="checkbox" /></label>
+                </div>
+                <div class="checkbox">
+                    <label>Sales Tax Districts<input type="checkbox" /></label>
+                </div>
+                </p>
               </div>
             </div>
           </div><!-- accordion panel -->
 
-        </div><!-- accordion end -->
 
+
+        </div><!-- accordion end -->
+        <div class="panel">
+            <div class="panel-heading">
+                <a data-toggle="modal" href="#business_types_modal" >
+                    <h4 class="panel-title">Local Businesses</h4>
+                </a>
+            </div>
+        </div>
+      
       </div><!-- sidebar end -->
 
       <div id="page-content-wrapper">
