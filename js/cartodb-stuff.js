@@ -25,7 +25,7 @@ $(document).ready(function() {
   var sliderOptions = {
     min: 0,
     max: 1,
-    step: 0.05,
+    step: 0.01,
     value: 0.5,
     formater: function(val) {
       return val.toFixed(2);
@@ -55,7 +55,7 @@ $(document).ready(function() {
     //console.log(mapLayers.layer4.getSQL());
 
 
-    $('.slider').on('slide', function (e) {
+    $('.slider').on('slideStop', function (e) {
       //console.log('Changed ' + $(this).id + ' val ' + e.value);
       var sliderID = $( this ).attr('id');
       //console.log(sliderID);
