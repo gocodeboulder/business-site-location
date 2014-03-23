@@ -104,32 +104,22 @@
 
     <div id="wrapper">
       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li>
-            <p>
-              Business Type
-              <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#avatarModal">
-                <i class="icon-user"></i>
-              </button>
-            </p>
-          </li>
-          <!--
-          <li>
-            <p>Liquor Licenses</p>
-            <div id="slider1" class="slider"></div>
-          </li>
-          <li>
-            <p>Broadband Speeds</p>
-            <div id="slider2" class="slider"></div>
-          </li>
-          <li>
-            <p>Mobile Phone Signal Strength</p>
-            <div id="slider3" class="slider"></div>
-          </li>
-        -->
-        </ul>
 
         <div class="panel-group" id="accordion">
+          <div class="panel">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              <div class="panel-heading">
+                <a data-toggle="modal" href="#avatarModal" >
+                  <h4 class="panel-title">What's Your Business?</h4>
+                </a> 
+              </div>
+            </a>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+                Importance: <div id="slider1" class="slider common-slider"></div>
+              </div>
+            </div>
+          </div><!-- accordion panel -->
           <div class="panel">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
               <div class="panel-heading">
