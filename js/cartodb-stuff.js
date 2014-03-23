@@ -22,7 +22,7 @@ $(document).ready(function() {
     $("#wrapper").toggleClass("active");
   });
 
-  $('.slider').slider({'min': 0, 'max': 1, step: '0.1'});
+  $('.slider').slider({'min': 0, 'max': 1, 'step': 0.01, 'value': 0.5});
   
 
   var url = 'http://sebrenner.cartodb.com/api/v2/viz/0ea1f37e-b21e-11e3-bf2d-0edbca4b5057/viz.json';
