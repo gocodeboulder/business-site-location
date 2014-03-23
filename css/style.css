@@ -12,6 +12,16 @@ body {
   text-align: center;
 }
 
+#brand-name {
+  font-size: 22px;
+  color: red;
+}
+
+#slogan {
+  font-size: 14px;
+  font-style: italic;
+}
+
 #map {
 	position: absolute;
 	height: calc(100% - 65px - 50px);
