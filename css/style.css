@@ -56,9 +56,12 @@ body {
   padding: 0;
 }
 
-.sidebar-nav li {
+.sidebar-nav li p {
+  color: #ddd;
   line-height: 40px;
   text-indent: 20px;
+  margin-bottom: 0;
+  margin-top: 15px;
 }
 
 .sidebar-nav li a {
@@ -113,13 +116,19 @@ body {
   padding: 20px;
 }
 
+.slider {
+	width: 100%;
+	margin-left: 20px;
+}
+
 
 @media (max-width:767px) {
 	#wrapper {
 	  padding-left: 0;
+	  height: 100%;
 	}
 
-	#map {
+	#wrapper:not(.active) #map {
 		position: absolute;
 		height: calc(100% - 65px - 50px);
 		width: 100%;
@@ -134,6 +143,11 @@ body {
 	#wrapper.active {
 	  position: relative;
 	  left: 250px;
+	}
+
+	#wrapper.active #page-content-wrapper {
+		width: calc(100% - 250px);
+		margin: 0;
 	}
 
 	#wrapper.active #sidebar-wrapper {
