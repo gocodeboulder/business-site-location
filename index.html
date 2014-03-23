@@ -56,8 +56,16 @@
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
           <li>
+            <p>
+              Avatars
+              <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#avatarModal">
+                <i class="icon-user"></i>
+              </button>
+            </p>
+          </li>
+          <li>
             <p>Liquor Licenses</p>
-            <div id="slider1"class="slider"></div>
+            <div id="slider1" class="slider"></div>
           </li>
           <li>
             <p>Broadband Speeds</p>
@@ -65,7 +73,7 @@
           </li>
           <li>
             <p>Mobile Phone Signal Strength</p>
-            <div id="slider3"class="slider"></div>
+            <div id="slider3" class="slider"></div>
           </li>
         </ul>
       </div>
@@ -80,6 +88,31 @@
         <div id="map"></div>
       </div>
     </div>
+
+    <div id="avatarModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Avatars</h4>
+          </div>
+          <div class="modal-body">
+            <p>Choose an avatar to customize your search:</p>
+            <button type="button" class="btn btn-sm" id="bakeryBtn" data-text="foot traffic, zoning">Bakery</button>
+            <button type="button" class="btn btn-sm" id="storeBtn" data-text="foot traffic, income demographics">Store</button>
+            <button type="button" class="btn btn-sm" id="photoBtn" data-text="parking, age demographics">Photo Studio</button>
+            <button type="button" class="btn btn-sm" id="techBtn" data-text="broadband service, tax incentives">Tech Startup</button>
+            <br>
+            <br>
+            <p id="avatarDescription"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     
     <!-- include cartodb.js library -->
     <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
