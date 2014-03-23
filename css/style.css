@@ -135,6 +135,14 @@ body {
   background-color: #333;
 }
 
+.slider.slider-horizontal {
+  width: 200px !important; /* sorry for important, but accordion auto-calcs the width and puts it in the DOM element! */
+}
+
+.tooltip.top {
+  top: -30px !important; /* sorry for important, but accordion auto-calcs the width and puts it in the DOM element! */
+}
+
 /* accordian stuff */
 .panel {
   background-color: #111;
