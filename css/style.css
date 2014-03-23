@@ -121,6 +121,11 @@ body {
 	margin-left: 20px;
 }
 
+.slider .tooltip.top .tooltip-arrow,
+.slider .tooltip-inner {
+  background-color: #333;
+}
+
 
 @media (max-width:767px) {
 	#wrapper {
