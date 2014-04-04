@@ -1,18 +1,44 @@
 var mapLayers = { };
 
 var sharedCartoCSS = 'marker-width: 10;' +
-  'marker-allow-overlap: true;' +
-  'marker-comp-op: multiply;' +
-  'marker-line-opacity: 0';
+  'marker-allow-overlap: true;';// +
+  //'marker-comp-op: multiply;' +
+  //'marker-line-opacity: 0';
 
 var mapSpecificStyles = {
-  'layer3': '#signaldata [ devicesignalstrength <= 0] {marker-fill: #B10026;}' +
-            '#signaldata [ devicesignalstrength <= -34.1196] {marker-fill: #E31A1C;}' +
-            '#signaldata [ devicesignalstrength <= -53.5556] {marker-fill: #FC4E2A;}' +
-            '#signaldata [ devicesignalstrength <= -63.5926] {marker-fill: #FD8D3C;}' +
-            '#signaldata [ devicesignalstrength <= -70.6471] {marker-fill: #FEB24C;}' +
-            '#signaldata [ devicesignalstrength <= -76.8889] {marker-fill: #FED976;}' +
-            '#signaldata [ devicesignalstrength <= -85.4] {marker-fill: #FFFFB2;}'
+  'layer1': '#liquor_licenses{' +
+            'polygon-fill: #FF2900;' +
+            'polygon-comp-op: multiply;' +
+            'line-color: #FF5C00;' +
+            'line-width: 10;' +
+            'line-opacity: 0.003;}',
+
+  'layer2': '#coloradocai_denver{' +
+              'polygon-comp-op: multiply;' +
+              'line-color: #d7faf4;' +
+              'line-width: 0;' +
+              'line-opacity: 0;}' +
+            '#coloradocai_denver [ actualdown <= 9200] {polygon-fill: #B10026;}' +
+            '#coloradocai_denver [ actualdown <= 19.12] {polygon-fill: #E31A1C;}' +
+            '#coloradocai_denver [ actualdown <= 13.5] {polygon-fill: #FC4E2A;}' +
+            '#coloradocai_denver [ actualdown <= 9.62] {polygon-fill: #FD8D3C;}' +
+            '#coloradocai_denver [ actualdown <= 5.6] {polygon-fill: #FEB24C;}' +
+            '#coloradocai_denver [ actualdown <= 4.641] {polygon-fill: #FED976;}' +
+            '#coloradocai_denver [ actualdown <= 3.323] {polygon-fill: #FFFFB2;}',
+
+  'layer3': '#signaldata{'+
+              'polygon-opacity: 0.01;'+
+              'polygon-comp-op: darken;'+
+              'line-color: #FFCC00;'+
+              'line-width: 0;'+
+              'line-opacity: 0;}'+
+            '#signaldata [ devicesignalstrength <= 0] {polygon-fill: #B10026;}'+
+            '#signaldata [ devicesignalstrength <= -30.5714] {polygon-fill: #E31A1C;}'+
+            '#signaldata [ devicesignalstrength <= -53.5556] {polygon-fill: #FC4E2A;}'+
+            '#signaldata [ devicesignalstrength <= -63.5926] {polygon-fill: #FD8D3C;}'+
+            '#signaldata [ devicesignalstrength <= -70.6471] {polygon-fill: #FEB24C;}'+
+            '#signaldata [ devicesignalstrength <= -76.8889] {polygon-fill: #FED976;}'+
+            '#signaldata [ devicesignalstrength <= -86.5] {polygon-fill: #FFFFB2;}'
 };
 
 $(document).ready(function() {
@@ -76,24 +102,28 @@ $(document).ready(function() {
       {
         case 'slider1':
           mapLayers.layer1.setCartoCSS(
-            '#liquor_licenses { marker-opacity: '+ e.value +'; '+
-            sharedCartoCSS + ' }'
+            '#liquor_licenses { polygon-opacity: '+ e.value*0.1 +'; '+
+            ' }' +
+            mapSpecificStyles.layer1
           );
-          //console.log('CSS: ' + mapLayers.layer1.getCartoCSS() );
+          console.log('CSS: ' + mapLayers.layer1.getCartoCSS() );
           //console.log('layer2 cartoCSS changed');
           break;
         case 'slider2':
           mapLayers.layer2.setCartoCSS(
-            '#coloradocai_denver { marker-opacity: '+ e.value +'; '+
-            sharedCartoCSS + ' }'
+            '#coloradocai_denver { polygon-opacity: '+ e.value*0.1 +'; '+
+            ' }' +
+            mapSpecificStyles.layer2
           );
+          console.log('CSS: ' + mapLayers.layer2.getCartoCSS() );
           break;
         case 'slider3':
           mapLayers.layer3.setCartoCSS(
-            '#signaldata { marker-opacity: '+ e.value +'; '+
-            sharedCartoCSS + ' }' +
+            '#signaldata { polygon-opacity: '+ e.value*0.02 +'; '+
+            ' }' +
             mapSpecificStyles.layer3
           );
+          console.log('CSS: ' + mapLayers.layer3.getCartoCSS() );
           break;
         default:
           break;
