@@ -1,0 +1,19 @@
+{
+  "name": "business-site-location",
+  "version": "0.0.0",
+  "description": "Business Site Location",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-bowercopy": "~1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gocodeboulder/business-site-location.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gocodeboulder/business-site-location/issues"
+  },
+  "homepage": "https://github.com/gocodeboulder/business-site-location"
+}
