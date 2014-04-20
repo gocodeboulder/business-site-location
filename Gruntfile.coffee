@@ -10,6 +10,7 @@ module.exports = (grunt) ->
                     destPrefix: 'js/libs'
                 files:
                     'angular.js':   'angular/angular.min.js'
+                    'angular-leaflet.js': 'angular-leaflet/dist/angular-leaflet-directive.min.js'
                     'leaflet.js':   'leaflet-dist/leaflet.js'
                     'bootstrap.js':  'bootstrap/dist/js/bootstrap.min.js'
                     'jquery.js':    'jquery/dist/jquery.min.js'
