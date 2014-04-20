@@ -22,6 +22,7 @@ body {
   font-style: italic;
 }
 
+.leaflet-container,
 #map {
 	position: absolute;
 	height: calc(100% - 65px - 50px);
