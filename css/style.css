@@ -22,7 +22,7 @@ body {
   font-style: italic;
 }
 
-#map {
+#mapDiv {
 	position: absolute;
 	height: calc(100% - 65px - 50px);
 	width: calc(100% - 250px);
