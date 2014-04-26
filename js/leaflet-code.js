@@ -26,7 +26,7 @@ function onMapClick(e) {
 }
 
 var zonesLayer = L.geoJson().addTo(map); //get the geojson from mapfish localhost:5000
-$.get('http://localhost:5000/zones',
+$.get('http://107.170.116.243:5000/zones',
     {'limit': 1000},
     function(data){zonesLayer.addData(data);},
     'json');
