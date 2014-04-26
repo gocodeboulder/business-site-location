@@ -13,8 +13,15 @@ var ggl = new L.Google('ROADMAP', {
 		styles: styles
 	}
 });
+
 map.addLayer(ggl);
 map.addControl(new L.Control.Layers( {'OSM':osm, 'Google':ggl}, {}));
+
+var cycle = L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
+            attribution: '© OpenCycleMap contributors - © OpenStreetMap contributors'
+            , opacity: 1
+        })
+map.addLayer(cycle);
 
 var popup = L.popup();
 
