@@ -8,7 +8,6 @@ var base = L.tileLayer(baseURL, {
 var denverLatLon = [39.7392, -104.9847];
 
 var map = L.map('map', {layers: [base]}).setView(denverLatLon, 12);
-map.scrollWheelZoom.disable();
 
 L.control.scale().addTo(map);
 
@@ -38,10 +37,7 @@ function generateDataSet(scale, valueRange, numberOfPoints) {
 var dataSets = [generateDataSet(0.1, 50, 500), 
 				generateDataSet(0.1, 100, 250),
 				generateDataSet(0.1, 200, 50)];
-//var dataSet1 = generateDataSet(0.1, 50, 500);
-//var dataSet2 = generateDataSet(0.1, 100, 250);
 
-//var data = dataSets.concat(dataSet2);
 var data = [];
 data.concat.apply(data, dataSets);
 
