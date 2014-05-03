@@ -38,20 +38,27 @@ var dataSets = [generateDataSet(0.1, 50, 500),
 				generateDataSet(0.1, 100, 250),
 				generateDataSet(0.1, 200, 50)];
 
-var data = [];
-data.concat.apply(data, dataSets);
+var dataSetMultipliers = [1, 10, 1];
+
+//var data = [];
+//data.concat.apply(data, dataSets);
 
 heatmap.clearData();
 
 function updateHeatMap(multiplier1, multiplier2 ) {
 	heatmap.setData([]);
-	for (var i=0, numberOfDataSets = dataSets.length; i<numberOfDataSets; ++i) {
-		for (var j = 0, setLength = dataSets[i].length; j < setLength; ++j) {
-			heatmap.addDataPoint(dataSets[i][j][0], dataSets[i][j][1], dataSets[i][j][2]*arguments[i]);
+	for (var i=0, numberOfDataSets = dataSets.length; i<numberOfDataSets; i++) {
+		for (var j = 0, setLength = dataSets[i].length; j < setLength; j++) {
+			heatmap.addDataPoint(dataSets[i][j][0], dataSets[i][j][1], 
+				dataSets[i][j][2] * arguments[i] * dataSetMultipliers[i]);
 		}
 	}
 	heatmap.update();
 }
+
+
+
+var cellular, broadband;
 
 $( document ).ready(function () {
 
@@ -89,7 +96,7 @@ $( document ).ready(function () {
 				}
 				var sliderScale = 1/(slider1Val + slider2Val + slider3Val);
 				updateHeatMap(slider1Val - slider2Val*slider3Val*sliderScale, 
-								slider2Val- slider1Val*slider3Val*sliderScale, 
+								(slider2Val- slider1Val*slider3Val*sliderScale), 
 								slider3Val - slider1Val*slider2Val*sliderScale);
 		}
 		else if( $(this).hasClass('opacity') ) {
@@ -104,4 +111,38 @@ $( document ).ready(function () {
 	*/
 
 	map.addLayer(heatmap);
+	updateHeatMap(0.3,0.3,0.3);
+
+	function formatData( data, propertyName) {
+		var formattedData = [], point, lat, lon, value;
+		for (var i = 0, len = data.length; i < len; i++ ) {
+			lat = data[i].geometry.coordinates[1];
+			lon = data[i].geometry.coordinates[0];
+			value = data[i].properties[propertyName];
+			formattedData.push([lat, lon, value]);
+		}
+		return formattedData;
+	}
+
+	//bbox=xmin,ymin,xmax,ymax
+	//$.getJSON( '/broadband_speeds?attrs=actualdown&bbox=-105.0847,39.6392,-104.8847,39.8392')
+	$.getJSON( 'data/broadband-subset.json')
+		.done(function( data ) {
+			//broadband = data;
+			broadband = formatData(data.features, 'actualdown');
+			dataSets[1] = broadband;
+		})
+		.fail(function( jqxhr, textStatus, error ) {
+			var err = textStatus + ", " + error;
+			console.log( "Request Failed: " + err );
+		});
+
+	$.getJSON( 'data/cellular-subset.json')
+		.done(function( data ) {
+			cellular = data;
+		})
+		.fail(function( jqxhr, textStatus, error ) {
+			var err = textStatus + ", " + error;
+			console.log( "Request Failed: " + err );
+		});
 });

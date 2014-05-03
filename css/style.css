@@ -136,7 +136,7 @@ body {
 }
 
 .slider.slider-horizontal {
-  width: 200px !important; /* sorry for important, but accordion auto-calcs the width and puts it in the DOM element! */
+  /*width: 200px !important; /* sorry for important, but accordion auto-calcs the width and puts it in the DOM element! */
 }
 
 .tooltip.top {
