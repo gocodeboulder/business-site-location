@@ -4,17 +4,13 @@
     <title>HotSpots: Colorado Business Location Intelligence</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-    <!--[if lte IE 8]>
-      <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
-    <![endif]-->
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css"></link>
+
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/carto-overrides.css" rel="stylesheet">
 
     <link href="plugins/slider/css/slider.css" rel="stylesheet">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
@@ -129,7 +125,7 @@
             </a>
             <div id="collapse2" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div id="slider1" class="slider common-slider"></div>
+                Importance: <div id="slider1" class="heatmap slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -145,7 +141,7 @@
             </a>
             <div id="collapse3" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div id="slider2"class="slider common-slider"></div>
+                Importance: <div id="slider2" class="heatmap slider"></div>
                 <div>
                   Min Speed: <input type="text" class="slider common-slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10"  />
                 </div>
@@ -164,7 +160,7 @@
             </a>
             <div id="collapse4" class="panel-collapse collapse">
               <div class="panel-body">
-                Importance: <div id="slider3" class="slider common-slider"></div>
+                Importance: <div id="slider3" class="heatmap slider"></div>
               </div>
             </div>
           </div><!-- accordion panel -->
@@ -313,15 +309,16 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     
-    <!-- include cartodb.js library -->
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
-
-    <script src="js/cartodb-stuff.js"></script>
-    <script src="js/avatar.js"></script>
-
+    <!-- scripts -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="js/webgl-heatmap.js"></script>
+    <script src="js/webgl-heatmap-leaflet.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="plugins/slider/js/bootstrap-slider.js"></script>
+
+    <script src="scripts.js"></script>
   </body>
 </html>
