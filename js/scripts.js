@@ -62,6 +62,12 @@ var cellular, broadband;
 
 $( document ).ready(function () {
 
+	// Sidebar controls
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("active");
+	});
+
 	var initialSliderValue = 0.5;
 
 	var sliderOptions = {
