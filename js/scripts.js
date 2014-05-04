@@ -13,7 +13,7 @@ L.control.scale().addTo(map);
 
 
 //custom size for this example, and autoresize because map style has a percentage width
-var heatmap = new L.TileLayer.WebGLHeatMap({size: 1000, alphaRange: 0.5, opacity: 0.7}); 
+var heatmap = new L.TileLayer.WebGLHeatMap({size: 2000, alphaRange: 0.5, opacity: 0.7}); 
 
 
 //var scale = 0.1;
@@ -38,7 +38,7 @@ var dataSets = [generateDataSet(0.1, 50, 500),
 				generateDataSet(0.1, 100, 250),
 				generateDataSet(0.1, 200, 50)];
 
-var dataSetMultipliers = [1, 10, 1];
+var dataSetMultipliers = [1, 5, 1];
 
 //var data = [];
 //data.concat.apply(data, dataSets);
@@ -119,12 +119,12 @@ $( document ).ready(function () {
 	map.addLayer(heatmap);
 	updateHeatMap(0.3,0.3,0.3);
 
-	function formatData( data, propertyName) {
+	function formatData( data, selectValueFunction) {
 		var formattedData = [], point, lat, lon, value;
 		for (var i = 0, len = data.length; i < len; i++ ) {
 			lat = data[i].geometry.coordinates[1];
 			lon = data[i].geometry.coordinates[0];
-			value = data[i].properties[propertyName];
+			value = selectValueFunction(data[i].properties);
 			formattedData.push([lat, lon, value]);
 		}
 		return formattedData;
@@ -135,7 +135,9 @@ $( document ).ready(function () {
 	$.getJSON( 'data/broadband-subset.json')
 		.done(function( data ) {
 			//broadband = data;
-			broadband = formatData(data.features, 'actualdown');
+			broadband = formatData(data.features, function (properties) {
+				return properties.actualdown; 
+			});
 			dataSets[1] = broadband;
 		})
 		.fail(function( jqxhr, textStatus, error ) {
